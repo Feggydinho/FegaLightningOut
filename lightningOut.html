@@ -1,0 +1,36 @@
+<html>
+
+<style>
+    a {
+        color: brown
+    }
+</style>
+    <script src=""></script>
+
+    <div data-lightning-out="true"></div>
+
+    <script>
+
+        const appName = 'c:optWrapper';
+        const componentName = 'c:optoutForm';
+        const lightningEndpoint = '';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {};
+
+        $lightning.use(
+            appName,
+            function(){
+                $lightning.createComponent(
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function(cmp){
+                        console.log('lightning component created');
+                    }
+                );
+            },
+            lightningEndpoint
+        )
+
+    </script>
+</html>
